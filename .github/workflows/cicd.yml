@@ -70,4 +70,10 @@ jobs:
         with:
           push: true
           tags: rahulkallur/osrm-api:latest
+      - 
+        name: Run Docker Container
+        run: |
+          docker rm -f osrm-api || true
+          docker run -d --name osrm-api -p 3000:3000 rahulkallur/osrm-api:latest
+
 
